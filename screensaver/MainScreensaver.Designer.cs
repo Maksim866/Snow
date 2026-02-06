@@ -1,6 +1,6 @@
-﻿namespace Snow
+﻿namespace screensaver
 {
-    partial class Form1
+    partial class MainScreensaver
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            SuspendLayout();
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(768, 428);
+            Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
+            ResumeLayout(false);
         }
 
         #endregion
