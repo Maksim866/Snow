@@ -34,7 +34,6 @@ namespace screensaver
         {
             backgroundBitmap = new Bitmap(Properties.Resources.village);
             overlayBitmap = new Bitmap(Properties.Resources.snowflake);
-            InitializeComponent();
 
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
@@ -219,6 +218,5 @@ namespace screensaver
             InitializeBuffer();
             UpdateScreen();
         }
-
     }
 }
