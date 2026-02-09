@@ -3,16 +3,10 @@ using System.Drawing;
 using System.Collections.Generic;
 using System.Windows.Forms;
 namespace screensaver
-{
-    public class Snowflake
-    {
-        public float X { get; set; }
-        public float Y { get; set; }
-        public float Size { get; set; }
-        public float Speed { get; set; }
-
-
-    }
+{ 
+    /// <summary>
+    /// Главная форма скринсейвера "Снегопад"
+    /// </summary>
     public partial class MainScreensaver : Form
     {
         private Bitmap backgroundBitmap;
@@ -33,7 +27,9 @@ namespace screensaver
 
         private List<Snowflake> snowflakes = new List<Snowflake>();
 
-
+        /// <summary>
+        /// Конструктор главной формы скринсейвера
+        /// </summary>
         public MainScreensaver()
         {
             backgroundBitmap = new Bitmap(Properties.Resources.village);
