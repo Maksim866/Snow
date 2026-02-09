@@ -5,7 +5,7 @@ using System.Windows.Forms;
 namespace screensaver
 {
     /// <summary>
-    /// Главная форма screensaver "Снегопад"
+    /// Главная форма скринсейвера "Снегопад"
     /// </summary>
     public partial class MainScreensaver : Form
     {
@@ -28,7 +28,7 @@ namespace screensaver
         private List<Snowflake> snowflakes = [];
 
         /// <summary>
-        /// Конструктор главной формы ScreenSaver
+        /// Конструктор главной формы скринсейвера
         /// </summary>
         public MainScreensaver()
         {
