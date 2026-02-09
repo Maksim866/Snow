@@ -99,7 +99,6 @@ namespace screensaver
             bufferGraphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None;
             bufferGraphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
             bufferGraphics.Clear(Color.Black);
-
         }
 
         private void InitializeSnowflakes()
@@ -107,8 +106,7 @@ namespace screensaver
             var width = ClientSize.Width;
             var height = ClientSize.Height;
 
-
-            for (var flakecount = 0; flakecount < CountSnowflake; flakecount++)
+            for (var flakeCount = 0; flakeCount < CountSnowflake; flakeCount++)
             {
                 var size = random.Next(MinSnowflakeSize, MaxSnowflakeSize + 1);
                 var sizeRatio = (float)(size - MinSnowflakeSize) / (MaxSnowflakeSize - MinSnowflakeSize);
