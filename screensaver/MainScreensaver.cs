@@ -64,12 +64,7 @@ namespace screensaver
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            animationTimer?.Stop();
-            animationTimer?.Dispose();
-            backgroundBitmap?.Dispose();
-            overlayBitmap?.Dispose();
-            bufferBitmap?.Dispose();
-            bufferGraphics?.Dispose();
+            animationTimer.Stop();
         }
 
         private void Form1_Load(object sender, EventArgs e)
