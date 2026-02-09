@@ -14,18 +14,18 @@ namespace screensaver
         private Bitmap bufferBitmap;
         private Graphics bufferGraphics;
 
-
         private const int MinSnowflakeSize = 18;
         private const int MaxSnowflakeSize = 40;
         private const float MinSnowflakeSpeed = 4.0f;
         private const float MaxSnowflakeSpeed = 12.0f;
         private const int CountSnowflake = 120;
+        private const int InitialSpawnHeightMultiplier = 3;
+        private const int SpawnBuffer = 100;
         private float deltaTime;
         private DateTime lastFrameTime;
         private Random random = new Random();
         private System.Windows.Forms.Timer animationTimer;
-
-        private List<Snowflake> snowflakes = new List<Snowflake>();
+        private List<Snowflake> snowflakes = [];
 
         /// <summary>
         /// Конструктор главной формы скринсейвера
@@ -34,9 +34,7 @@ namespace screensaver
         {
             backgroundBitmap = new Bitmap(Properties.Resources.village);
             overlayBitmap = new Bitmap(Properties.Resources.snowflake);
-
             InitializeComponent();
-
 
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
@@ -78,13 +76,10 @@ namespace screensaver
         private void Form1_Load(object sender, EventArgs e)
         {
             lastFrameTime = DateTime.Now;
-            
-
             DrawFrame();
             UpdateScreen();
             animationTimer.Start();
             this.Focus();
-        
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -103,7 +98,6 @@ namespace screensaver
 
             bufferGraphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None;
             bufferGraphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
-
             bufferGraphics.Clear(Color.Black);
 
         }
@@ -120,7 +114,7 @@ namespace screensaver
                 var sizeRatio = (float)(size - MinSnowflakeSize) / (MaxSnowflakeSize - MinSnowflakeSize);
                 var speed = MinSnowflakeSpeed + sizeRatio * (MaxSnowflakeSpeed - MinSnowflakeSpeed);
                 var x = random.Next(0, width);
-                var y = random.Next(-height * 3, -size);
+                var y = random.Next(-height * InitialSpawnHeightMultiplier, -size);
 
                 snowflakes.Add(new Snowflake
                 {
@@ -128,7 +122,6 @@ namespace screensaver
                     Y = y,
                     Size = size,
                     Speed = speed,
-
                 });
             }
         }
@@ -160,9 +153,9 @@ namespace screensaver
             {
                 flake.Y += flake.Speed * frameMultiplier;
                 
-                if (flake.Y > height + 100)
+                if (flake.Y > height + SpawnBuffer)
                 {
-                    flake.Y = random.Next(-height * 3, -(int)flake.Size);
+                    flake.Y = random.Next(-height * InitialSpawnHeightMultiplier, -(int)flake.Size);
                     flake.X = random.Next(0, width);
                 }
 
