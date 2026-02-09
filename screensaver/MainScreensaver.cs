@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Collections.Generic;
 using System.Windows.Forms;
 namespace screensaver
-{ 
+{
     /// <summary>
     /// Главная форма скринсейвера "Снегопад"
     /// </summary>
