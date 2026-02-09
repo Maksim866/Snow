@@ -1,11 +1,11 @@
-using System;
+п»їusing System;
 using System.Drawing;
 using System.Collections.Generic;
 using System.Windows.Forms;
 namespace screensaver
 {
     /// <summary>
-    /// Главная форма скринсейвера "Снегопад"
+    /// Р“Р»Р°РІРЅР°СЏ С„РѕСЂРјР° СЃРєСЂРёРЅСЃРµР№РІРµСЂР° "РЎРЅРµРіРѕРїР°Рґ"
     /// </summary>
     public partial class MainScreensaver : Form
     {
@@ -28,7 +28,7 @@ namespace screensaver
         private List<Snowflake> snowflakes = [];
 
         /// <summary>
-        /// Конструктор главной формы скринсейвера
+        /// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РіР»Р°РІРЅРѕР№ С„РѕСЂРјС‹ СЃРєСЂРёРЅСЃРµР№РІРµСЂР°
         /// </summary>
         public MainScreensaver()
         {
